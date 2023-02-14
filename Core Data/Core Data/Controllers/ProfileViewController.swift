@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    // MARK: The image model properties
     lazy var profileImage: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +18,6 @@ class ProfileViewController: UIViewController {
         return img
     }()
     
-    // MARK: The title label model properties
     lazy var profileName: UILabel = {
         let label = UILabel()
         label.contentMode = .scaleAspectFill
@@ -41,7 +39,7 @@ class ProfileViewController: UIViewController {
     lazy var home: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Home", for: .normal)
+        btn.setTitle("Home page", for: .normal)
         btn.setTitleColor(UIColor.blue, for: .normal)
         btn.addTarget(self, action: #selector(homeButtonTapped), for: .touchUpInside)
         return btn

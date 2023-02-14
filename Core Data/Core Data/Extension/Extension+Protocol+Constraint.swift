@@ -35,13 +35,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         //MARK: - configure button handler
         let saveBtn = UIAlertAction(title: "Save", style: .default) {
             (action) in
-            //MARK: - get the textfield fot the alert
+            
+        //MARK: - get the textfield fot the alert
             let textField = alert.textFields![0]
             
-            //MARK: - edit the name property of the fruit object
+        //MARK: - edit the name property of the fruit object
             fruit.name = textField.text
             
-            //MARK: - save the data
+        //MARK: - save the data
             do {
                 try self.context.save()
             }
@@ -49,7 +50,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 
             }
             
-            //MARK: - re-fetch the data
+        //MARK: - re-fetch the data
             self.fetchFruits()
         }
         alert.addAction(saveBtn)
@@ -59,13 +60,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
             
-            //MARK: - fruit to delete
+        //MARK: - fruit to delete
             let removeFruit = self.fruits![indexPath.row]
             
-            //MARK: - delete fruit
+        //MARK: - delete fruit
             self.context.delete(removeFruit)
             
-            //MARK: - save fruit
+        //MARK: - save fruit
             do {
                 try self.context.save()
             }
@@ -73,7 +74,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 
             }
             
-            //MARK: - re-fetch fruit
+        //MARK: - re-fetch fruit
             self.fetchFruits()
         }
         
@@ -102,6 +103,4 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             profile.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
-    
-    
 }

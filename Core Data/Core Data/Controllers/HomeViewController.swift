@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     lazy var playButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "play"), for: .normal)
+        btn.setImage(UIImage(systemName: "pause"), for: .normal)
         btn.layer.cornerRadius = 15
         btn.tintColor = .blue
         return btn
@@ -80,20 +80,20 @@ class HomeViewController: UIViewController {
         let submitBtn = UIAlertAction(title: "Add", style: .default) { (action) in
             
             let textField = alert.textFields![0]
-            // create an object
+            //MARK: - create an object
             let newFruit = Fruits(context: self.context)
             newFruit.name = textField.text
             newFruit.type = "Ripe"
             newFruit.number = 10
             
-            // save the data
+            //MARK: - save the data
             do {
                 try self.context.save()
             }
             catch {
                 
             }
-            // refectch the data
+            //MARK: - refectch the data
             self.fetchFruits()
         }
         
@@ -134,7 +134,4 @@ class HomeViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
-    
-    
-    
 }
