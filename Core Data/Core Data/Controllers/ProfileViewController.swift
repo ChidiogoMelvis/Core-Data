@@ -78,6 +78,4 @@ class ProfileViewController: UIViewController {
             home.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
         ])
     }
-    
-    
 }
