@@ -1,1 +1,1 @@
-# Core-Data
+Created a CRUD Operations using Core data framework in UIkit (programmatic ui)
