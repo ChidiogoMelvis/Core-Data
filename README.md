@@ -1,1 +1,1 @@
-Created a CRUD Operations using Core data framework in UIkit (programmatic ui)
+This project comprises of two frameworks in iOS Core Data and AVFoundation Frameworks respectively. Users can play audio url and save/delete data. I created it using Programmatic Ui(UIkit).
